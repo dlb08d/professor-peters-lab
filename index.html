@@ -21,19 +21,10 @@
     .btn{ display:inline-block; background:var(--cyan); color:#08202f; padding:12px 16px; border-radius:6px; box-shadow: inset 0 -6px 0 rgba(0,0,0,.35), 0 6px 0 #0b2030; font-size:12px }
     .btn:active{ transform:translateY(2px); box-shadow: inset 0 -2px 0 rgba(0,0,0,.35), 0 2px 0 #0b2030 }
     .section{ padding:60px 0; border-top:4px solid var(--cyan); border-bottom:4px solid var(--cyan) }
-    .grid{ display:grid; gap:16px }
     .cards{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px }
     .card{ background:var(--card); border:4px solid var(--border); padding:18px; border-radius:8px }
-    .muted{ color:var(--muted); font-size:12px }
-    .title{ font-size:24px; line-height:1.3 }
     .subtitle{ font-size:12px; color:var(--muted) }
-    .badge{ font-size:10px; color:var(--accent) }
-    .hero{ display:grid; grid-template-columns:1fr; gap:24px; align-items:center }
-    @media (min-width: 860px){ .hero{ grid-template-columns:1.2fr .8fr } }
-    .crt:before{ content:''; position:absolute; inset:0; opacity:.08; mix-blend-mode:overlay;
-      background: repeating-linear-gradient(0deg, rgba(255,255,255,.2) 0 2px, transparent 2px 4px); pointer-events:none; }
-    .crt{ position:relative; overflow:hidden; isolation:isolate }
-    footer{ padding:30px 0 }
+    .title{ font-size:24px; line-height:1.3 }
     .u8{ font-size:10px }
     svg{ image-rendering: pixelated; }
     .thumb{ aspect-ratio: 16/9; width:100%; object-fit: cover; border:4px solid var(--border); border-radius:8px; background:#061423 }
@@ -43,19 +34,26 @@
   <header>
     <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
       <div class="brand">
-        <!-- Mini mascot -->
+        <!-- Mini mascot (glasses with full bridge + temples, added mouth) -->
         <div class="pixel-border" style="background:#061423; padding:6px; border-radius:6px">
           <svg width="48" height="48" viewBox="0 0 120 120" aria-label="Professor Peter mini">
             <rect width="120" height="120" fill="#0b3b5a"/>
             <circle cx="60" cy="42" r="26" fill="#d7a671"/>
             <ellipse cx="60" cy="88" rx="30" ry="26" fill="#e6f0ff"/>
             <ellipse cx="60" cy="56" rx="24" ry="14" fill="#ffffff"/>
-            <rect x="38" y="34" width="16" height="12" fill="#bfd7ff" stroke="#5b6770" stroke-width="3"/>
-            <rect x="66" y="34" width="16" height="12" fill="#bfd7ff" stroke="#5b6770" stroke-width="3"/>
-            <rect x="60" y="39" width="8" height="2" fill="#5b6770"/>
-            <circle cx="46" cy="40" r="3" fill="#000"/>
-            <circle cx="74" cy="40" r="3" fill="#000"/>
+            <!-- glasses: lenses + connected bridge + temples -->
+            <rect x="36" y="33" width="22" height="14" fill="#bfd7ff" stroke="#5b6770" stroke-width="3" rx="2"/>
+            <rect x="62" y="33" width="22" height="14" fill="#bfd7ff" stroke="#5b6770" stroke-width="3" rx="2"/>
+            <rect x="58" y="39" width="8" height="2" fill="#5b6770"/><!-- thicker bridge -->
+            <rect x="30" y="38" width="8" height="2" fill="#5b6770"/><!-- left temple -->
+            <rect x="82" y="38" width="8" height="2" fill="#5b6770"/><!-- right temple -->
+            <!-- eyes -->
+            <circle cx="47" cy="40" r="3" fill="#000"/>
+            <circle cx="73" cy="40" r="3" fill="#000"/>
+            <!-- nose + mouth -->
             <circle cx="60" cy="50" r="3" fill="#f7a1b3"/>
+            <path d="M52,56 Q60,62 68,56" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- buttons -->
             <circle cx="60" cy="78" r="2.5" fill="#5b6770"/>
             <circle cx="60" cy="90" r="2.5" fill="#5b6770"/>
           </svg>
@@ -75,10 +73,10 @@
 
   <main>
     <!-- Hero -->
-    <section class="section crt">
-      <div class="wrap hero">
+    <section class="section" style="position:relative; overflow:hidden; isolation:isolate">
+      <div class="wrap" style="display:grid; grid-template-columns:1fr; gap:24px; align-items:center">
         <div>
-          <div class="u8" style="color:#7df9ff">NEW • EDUCATIONAL ARCADE</div>
+          <div class="u8" style="color:#7df9ff">EDUCATIONAL ARCADE</div>
           <h1 class="title" style="margin-top:18px">POWER UP YOUR BRAIN.<br>PRESS START TO PLAY.</h1>
           <p class="subtitle" style="margin-top:12px">
             Welcome to Professor Peter’s Lab — a retro kids arcade where math, reading, logic, and science play like your favorite games.
@@ -89,22 +87,34 @@
         </div>
         <div style="display:flex; justify-content:center">
           <div class="pixel-border" style="background:#061423; padding:14px; border-radius:10px">
-            <!-- Larger mascot -->
+            <!-- Larger mascot (connected glasses + mouth) -->
             <svg width="340" height="260" viewBox="0 0 340 260" aria-label="Professor Peter mascot">
               <rect width="340" height="260" fill="#0b3b5a"/>
+              <!-- head -->
               <circle cx="170" cy="90" r="64" fill="#d7a671"/>
+              <!-- lab coat body -->
               <rect x="100" y="130" width="140" height="100" rx="18" fill="#e6f0ff" stroke="#14324a" stroke-width="6"/>
+              <!-- white cheeks/belly -->
               <ellipse cx="170" cy="120" rx="70" ry="34" fill="#ffffff"/>
+              <!-- arms -->
               <ellipse cx="110" cy="170" rx="16" ry="14" fill="#d7a671"/>
               <ellipse cx="230" cy="170" rx="16" ry="14" fill="#d7a671"/>
+              <!-- feet -->
               <ellipse cx="145" cy="228" rx="14" ry="10" fill="#d7a671"/>
               <ellipse cx="195" cy="228" rx="14" ry="10" fill="#d7a671"/>
-              <rect x="125" y="70" width="44" height="28" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="4"/>
-              <rect x="201" y="70" width="44" height="28" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="4"/>
-              <rect x="169" y="82" width="10" height="6" fill="#5b6770"/>
+              <!-- glasses: lenses + connected bridge + temples -->
+              <rect x="121" y="68" width="52" height="32" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="6"/>
+              <rect x="197" y="68" width="52" height="32" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="6"/>
+              <rect x="170" y="82" width="12" height="6" fill="#5b6770"/>
+              <rect x="108" y="84" width="16" height="6" fill="#5b6770"/><!-- left temple -->
+              <rect x="216" y="84" width="16" height="6" fill="#5b6770"/><!-- right temple -->
+              <!-- eyes -->
               <circle cx="147" cy="84" r="6" fill="#000"/>
               <circle cx="225" cy="84" r="6" fill="#000"/>
+              <!-- nose + mouth -->
               <circle cx="170" cy="108" r="6" fill="#f7a1b3"/>
+              <path d="M150,122 Q170,134 190,122" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <!-- buttons -->
               <circle cx="170" cy="164" r="6" fill="#5b6770"/>
               <circle cx="170" cy="188" r="6" fill="#5b6770"/>
             </svg>
@@ -122,7 +132,7 @@
       </div>
       <div class="cards" style="margin-top:16px">
         <a class="card" href="https://dlb08d.github.io/Raiders-of-the-Lost-Letters/" target="_blank" rel="noopener" aria-label="Open Raiders of the Lost Letters">
-          <div class="badge">LANGUAGE • LVL 1</div>
+          <div class="u8" style="color:#7df9ff">SPELLING</div>
           <h3 style="margin:12px 0 6px 0">Raiders of the Lost Letters</h3>
           <img class="thumb" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdlb08d.github.io%2FRaiders-of-the-Lost-Letters%2F?w=800" alt="Raiders of the Lost Letters screenshot">
           <p class="subtitle" style="margin-top:10px">An adventurous spelling quest. Click to play.</p>
@@ -133,7 +143,7 @@
       </div>
     </section>
 
-    <!-- About (kept from your edit) -->
+    <!-- About -->
     <section id="about" class="wrap" style="padding:40px 0">
       <div class="card">
         <h2 class="title">ABOUT THE LAB</h2>
@@ -151,10 +161,10 @@
         <form class="cards" style="grid-template-columns:1fr 1fr"
           action="mailto:ProfessorPetersLab@gmail.com?subject=Website%20Contact"
           method="post" enctype="text/plain">
-          <input name="Name" placeholder="Name" style="padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px">
-          <input name="Email" placeholder="Email" type="email" style="padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px">
-          <input name="Subject" placeholder="Subject" style="grid-column:1/-1; padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px">
-          <textarea name="Message" rows="5" placeholder="Message" style="grid-column:1/-1; padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px"></textarea>
+          <input name="Name" placeholder="Name" style="padding:12px; border:4px solid var(--border); background:#091827; color:#fff; border-radius:8px">
+          <input name="Email" placeholder="Email" type="email" style="padding:12px; border:4px solid var(--border); background:#091827; color:#fff; border-radius:8px">
+          <input name="Subject" placeholder="Subject" style="grid-column:1/-1; padding:12px; border:4px solid var(--border); background:#091827; color:#fff; border-radius:8px">
+          <textarea name="Message" rows="5" placeholder="Message" style="grid-column:1/-1; padding:12px; border:4px solid var(--border); background:#091827; color:#fff; border-radius:8px"></textarea>
           <button type="submit" class="btn" style="grid-column:1/-1; width:max-content">SEND</button>
         </form>
         <p class="u8" style="margin-top:8px; color:#7df9ff">Note: This uses your email app to send.</p>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Professor Peter's Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0e1c2a; --ink:#e6f3ff; --muted:#a7d9ff; --cyan:#00e5ff; --cyan-d:#0088aa;
+      --border:#14324a; --accent:#7df9ff;
+    }
+    *{ box-sizing:border-box }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:"Press Start 2P", system-ui, sans-serif; }
+    a{ color:var(--accent); text-decoration:none }
+    .wrap{ max-width:1100px; margin:0 auto; padding:20px }
+    header{ position:sticky; top:0; z-index:10; background:rgba(5,10,20,.8); backdrop-filter: blur(6px); border-bottom:4px solid var(--cyan); }
+    nav a{ margin-right:18px; font-size:12px }
+    .brand{ display:flex; align-items:center; gap:12px }
+    .pixel-border{ box-shadow: 0 0 0 4px #111, 0 0 0 8px var(--cyan), 0 0 0 12px #111; }
+    .btn{ display:inline-block; background:var(--cyan); color:#08202f; padding:12px 16px; border-radius:6px; box-shadow: inset 0 -6px 0 rgba(0,0,0,.35), 0 6px 0 #0b2030; font-size:12px }
+    .btn:active{ transform:translateY(2px); box-shadow: inset 0 -2px 0 rgba(0,0,0,.35), 0 2px 0 #0b2030 }
+    .section{ padding:60px 0; border-top:4px solid var(--cyan); border-bottom:4px solid var(--cyan) }
+    .grid{ display:grid; gap:16px }
+    .cards{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px }
+    .card{ background:var(--card); border:4px solid var(--border); padding:18px; border-radius:8px }
+    .muted{ color:var(--muted); font-size:12px }
+    .title{ font-size:24px; line-height:1.3 }
+    .subtitle{ font-size:12px; color:var(--muted) }
+    .badge{ font-size:10px; color:var(--accent) }
+    .hero{ display:grid; grid-template-columns:1fr; gap:24px; align-items:center }
+    @media (min-width: 860px){ .hero{ grid-template-columns:1.2fr .8fr } }
+    .crt:before{ content:''; position:absolute; inset:0; opacity:.08; mix-blend-mode:overlay;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,.2) 0 2px, transparent 2px 4px); pointer-events:none; }
+    .crt{ position:relative; overflow:hidden; isolation:isolate }
+    footer{ padding:30px 0 }
+    .u8{ font-size:10px }
+    svg{ image-rendering: pixelated; }
+    .link-underline{ position:relative }
+    .link-underline:after{ content:''; position:absolute; left:0; bottom:-2px; height:3px; width:100%; background:var(--cyan); box-shadow:0 3px 0 var(--cyan-d); }
+    .pill{ display:inline-block; background:#091827; padding:6px 10px; border:2px solid var(--border); border-radius:8px; font-size:10px }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
+      <div class="brand">
+        <!-- Mini mascot -->
+        <div class="pixel-border" style="background:#061423; padding:6px; border-radius:6px">
+          <svg width="48" height="48" viewBox="0 0 120 120" aria-label="Professor Peter mini">
+            <!-- background -->
+            <rect width="120" height="120" fill="#0b3b5a"/>
+            <!-- simplified hamster head/body -->
+            <circle cx="60" cy="42" r="26" fill="#d7a671"/><!-- head tan -->
+            <ellipse cx="60" cy="88" rx="30" ry="26" fill="#e6f0ff"/><!-- lab coat -->
+            <ellipse cx="60" cy="56" rx="24" ry="14" fill="#ffffff"/><!-- cheeks -->
+            <!-- glasses -->
+            <rect x="38" y="34" width="16" height="12" fill="#bfd7ff" stroke="#5b6770" stroke-width="3"/>
+            <rect x="66" y="34" width="16" height="12" fill="#bfd7ff" stroke="#5b6770" stroke-width="3"/>
+            <rect x="60" y="39" width="8" height="2" fill="#5b6770"/>
+            <!-- eyes -->
+            <circle cx="46" cy="40" r="3" fill="#000"/>
+            <circle cx="74" cy="40" r="3" fill="#000"/>
+            <!-- nose -->
+            <circle cx="60" cy="50" r="3" fill="#f7a1b3"/>
+            <!-- buttons -->
+            <circle cx="60" cy="78" r="2.5" fill="#5b6770"/>
+            <circle cx="60" cy="90" r="2.5" fill="#5b6770"/>
+          </svg>
+        </div>
+        <div>
+          <div class="u8" style="letter-spacing:2px; color:#7df9ff">RETRO 8‑BIT ARCADE</div>
+          <div>PROFESSOR PETER'S LAB</div>
+        </div>
+      </div>
+      <nav class="u8">
+        <a href="#games">GAMES</a>
+        <a href="#rewards">REWARDS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="section crt">
+      <div class="wrap hero">
+        <div>
+          <div class="u8" style="color:#7df9ff">NEW • 8‑BIT LEARNING ARCADE</div>
+          <h1 class="title" style="margin-top:18px">POWER UP YOUR BRAIN.<br>PRESS START TO PLAY.</h1>
+          <p class="subtitle" style="margin-top:12px">
+            Welcome to Professor Peter’s Lab — a retro kids arcade where math, reading, logic, and science play like your favorite games.
+          </p>
+          <div style="margin-top:18px">
+            <a class="btn" href="#games">▶ START</a>
+            <span class="pill" style="margin-left:10px">NO ADS</span>
+            <span class="pill">SAFE</span>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:center">
+          <div class="pixel-border" style="background:#061423; padding:14px; border-radius:10px">
+            <!-- Larger mascot -->
+            <svg width="340" height="260" viewBox="0 0 340 260" aria-label="Professor Peter mascot">
+              <rect width="340" height="260" fill="#0b3b5a"/>
+              <!-- head -->
+              <circle cx="170" cy="90" r="64" fill="#d7a671"/>
+              <!-- lab coat body -->
+              <rect x="100" y="130" width="140" height="100" rx="18" fill="#e6f0ff" stroke="#14324a" stroke-width="6"/>
+              <!-- white cheeks/belly -->
+              <ellipse cx="170" cy="120" rx="70" ry="34" fill="#ffffff"/>
+              <!-- arms -->
+              <ellipse cx="110" cy="170" rx="16" ry="14" fill="#d7a671"/>
+              <ellipse cx="230" cy="170" rx="16" ry="14" fill="#d7a671"/>
+              <!-- feet -->
+              <ellipse cx="145" cy="228" rx="14" ry="10" fill="#d7a671"/>
+              <ellipse cx="195" cy="228" rx="14" ry="10" fill="#d7a671"/>
+              <!-- glasses -->
+              <rect x="125" y="70" width="44" height="28" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="4"/>
+              <rect x="201" y="70" width="44" height="28" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="4"/>
+              <rect x="169" y="82" width="10" height="6" fill="#5b6770"/>
+              <!-- eyes -->
+              <circle cx="147" cy="84" r="6" fill="#000"/>
+              <circle cx="225" cy="84" r="6" fill="#000"/>
+              <!-- nose -->
+              <circle cx="170" cy="108" r="6" fill="#f7a1b3"/>
+              <!-- buttons -->
+              <circle cx="170" cy="164" r="6" fill="#5b6770"/>
+              <circle cx="170" cy="188" r="6" fill="#5b6770"/>
+            </svg>
+            <p class="u8" style="text-align:center; color:#7df9ff; margin-top:8px">PETER • TAN & WHITE • LAB COAT + GLASSES</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Games Grid -->
+    <section id="games" class="wrap" style="padding:40px 0">
+      <div style="display:flex; align-items:end; justify-content:space-between">
+        <h2 class="title">ARCADE CABINETS</h2>
+        <a class="link-underline u8" href="#rewards">SEE REWARDS</a>
+      </div>
+      <div class="cards" style="margin-top:16px">
+        <div class="card">
+          <div class="badge">MATH • LVL 1</div>
+          <h3 style="margin:12px 0 6px 0">Number Ninja</h3>
+          <p class="subtitle">Slash through sums and dodge decimals.</p>
+        </div>
+        <div class="card">
+          <div class="badge">READING • LVL 2</div>
+          <h3 style="margin:12px 0 6px 0">Word Warp</h3>
+          <p class="subtitle">Power up phonics and vocab combos.</p>
+        </div>
+        <div class="card">
+          <div class="badge">LOGIC • LVL 3</div>
+          <h3 style="margin:12px 0 6px 0">Logic Lanes</h3>
+          <p class="subtitle">Route the robot using if/then tiles.</p>
+        </div>
+        <div class="card">
+          <div class="badge">SCIENCE • LVL 4</div>
+          <h3 style="margin:12px 0 6px 0">Tater Tech</h3>
+          <p class="subtitle">Mix, measure, and test your theories.</p>
+        </div>
+        <div class="card">
+          <div class="badge">GEOGRAPHY • LVL 5</div>
+          <h3 style="margin:12px 0 6px 0">Map Quest</h3>
+          <p class="subtitle">Track clues across continents.</p>
+        </div>
+        <div class="card">
+          <div class="badge">FOCUS • LVL 6</div>
+          <h3 style="margin:12px 0 6px 0">Beat the Clock</h3>
+          <p class="subtitle">Sharpen memory with timed rounds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rewards -->
+    <section id="rewards" class="section">
+      <div class="wrap">
+        <h2 class="title">REWARD TOKENS</h2>
+        <p class="subtitle" style="margin-top:10px">Earn tokens and trade them for perks.</p>
+        <div class="cards" style="margin-top:16px">
+          <div class="card">
+            <div class="badge">x10</div>
+            <h3 style="margin:12px 0 6px 0">Bronze Beaker</h3>
+            <p class="subtitle">Sticker pack or avatar skin</p>
+          </div>
+          <div class="card">
+            <div class="badge">x25</div>
+            <h3 style="margin:12px 0 6px 0">Silver Circuit</h3>
+            <p class="subtitle">Extra play time + bonus round</p>
+          </div>
+          <div class="card">
+            <div class="badge">x50</div>
+            <h3 style="margin:12px 0 6px 0">Golden Goggles</h3>
+            <p class="subtitle">Exclusive mini‑game + badge</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Safety -->
+    <section id="about" class="wrap" style="padding:40px 0">
+      <div class="cards">
+        <div class="card">
+          <h2 class="title">ABOUT THE LAB</h2>
+          <p class="subtitle" style="margin-top:10px">
+            Professor Peter believes every game is an experiment. Kids test ideas, try again, and level up skills across math, reading, logic, and science — all without ads.
+          </p>
+          <ul class="subtitle" style="margin-top:10px; list-style:none; padding:0">
+            <li>• Short, rewarding levels</li>
+            <li>• Hints from Professor Peter</li>
+            <li>• Progress badges</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2 class="title">SAFETY & ACCESSIBILITY</h2>
+          <p class="subtitle" style="margin-top:10px">
+            No chats. No external links. Clear fonts, high contrast, keyboard and screen‑reader friendly. Designed for ages 5–12.
+          </p>
+          <div class="subtitle" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-top:10px">
+            <div class="pill">COPPA‑friendly</div>
+            <div class="pill">No Ads</div>
+            <div class="pill">Offline Ready*</div>
+            <div class="pill">Low‑Literacy Mode</div>
+          </div>
+          <p class="u8" style="margin-top:8px; color:#7df9ff">*Add a PWA later if you want offline.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2 class="title">CONTACT</h2>
+        <p class="subtitle" style="margin-top:8px">Want custom games for your classroom or arcade? Send a note.</p>
+        <form class="cards" style="grid-template-columns:1fr 1fr">
+          <input placeholder="Name" style="padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px">
+          <input placeholder="Email" type="email" style="padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px">
+          <input placeholder="Subject" style="grid-column:1/-1; padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px">
+          <textarea rows="5" placeholder="Message" style="grid-column:1/-1; padding:12px; border:4px solid var(--border); background:#091827; color:var(--ink); border-radius:8px"></textarea>
+          <button type="button" class="btn" style="grid-column:1/-1; width:max-content">SEND</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap u8" style="display:flex; align-items:center; justify-content:space-between; gap:12px">
+      <div>© {year} Professor Peter's Lab</div>
+      <div>Built with ❤️ + pixels</div>
+    </div>
+  </footer>
+
+  <script>
+    // Replace {year} dynamically for the footer
+    document.body.innerHTML = document.body.innerHTML.replace("{year}", new Date().getFullYear());
+  </script>
+</body>
+</html>

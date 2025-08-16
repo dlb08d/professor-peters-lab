@@ -4,12 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Professor Peter's Lab</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press%20Start%202P&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b1220; --card:#0e1c2a; --ink:#e6f3ff; --muted:#a7d9ff; --cyan:#00e5ff; --cyan-d:#0088aa;
-      --border:#14324a; --accent:#7df9ff;
-    }
+    :root{ --bg:#0b1220; --card:#0e1c2a; --ink:#e6f3ff; --muted:#a7d9ff; --cyan:#00e5ff; --border:#14324a; --accent:#7df9ff; }
     *{ box-sizing:border-box }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:"Press Start 2P", system-ui, sans-serif; }
     a{ color:var(--accent); text-decoration:none }
@@ -136,7 +133,7 @@
           <div class="u8" style="color:#7df9ff">SPELLING</div>
           <h3 style="margin:12px 0 6px 0">Raiders of the Lost Letters</h3>
           <div class="grow">
-            <img class="thumb" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdlb08d.github.io%2FRaiders-of-the-Lost-Letters%2F?w=800" alt="Raiders of the Lost Letters screenshot">
+            <img id="shot-raiders" class="thumb" alt="Raiders of the Lost Letters screenshot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdlb08d.github.io%2FRaiders-of-the-Lost-Letters%2F?w=800">
             <p class="subtitle" style="margin-top:10px">An adventurous spelling quest. Click to play.</p>
           </div>
           <div style="margin-top:12px">
@@ -147,7 +144,7 @@
           <div class="u8" style="color:#7df9ff">SPELLING</div>
           <h3 style="margin:12px 0 6px 0">Spellassic Park</h3>
           <div class="grow">
-            <img class="thumb" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdlb08d.github.io%2FSpellassic-Park%2F?w=800" alt="Spellassic Park screenshot">
+            <img id="shot-spellassic" class="thumb" alt="Spellassic Park screenshot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdlb08d.github.io%2FSpellassic-Park%2F?w=800">
             <p class="subtitle" style="margin-top:10px">Dino-sized spelling challenges. Click to play.</p>
           </div>
           <div style="margin-top:12px">
@@ -194,7 +191,19 @@
   </footer>
 
   <script>
+    // Replace year
     document.body.innerHTML = document.body.innerHTML.replace("{year}", new Date().getFullYear());
+    // Refresh screenshot thumbnails on every load by cache-busting.
+    (function() {
+      try {
+        var last = parseInt(localStorage.getItem('shotBust') || '0', 10) ^ 1; // flip between 0/1
+        localStorage.setItem('shotBust', String(last));
+        var width = last ? 801 : 800;
+        var ts = Date.now();
+        document.getElementById('shot-raiders').src = 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdlb08d.github.io%2FRaiders-of-the-Lost-Letters%2F?w=' + width + '&t=' + ts;
+        document.getElementById('shot-spellassic').src = 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdlb08d.github.io%2FSpellassic-Park%2F?w=' + width + '&t=' + ts;
+      } catch (e) { /* ignore */ }
+    })();
   </script>
 </body>
 </html>

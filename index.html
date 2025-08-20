@@ -9,7 +9,7 @@
     :root{ --bg:#0b1220; --card:#0e1c2a; --ink:#e6f3ff; --muted:#a7d9ff; --cyan:#00e5ff; --border:#14324a; --accent:#7df9ff; }
     *{ box-sizing:border-box }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:"Press Start 2P", system-ui, sans-serif; }
-    a{ color:var(--accent); text-decoration:none }
+    a{ color:#7df9ff; text-decoration:none }
     .wrap{ max-width:1100px; margin:0 auto; padding:20px }
     header{ position:sticky; top:0; z-index:10; background:rgba(5,10,20,.8); backdrop-filter: blur(6px); border-bottom:4px solid var(--cyan); }
     nav a{ margin-right:18px; font-size:12px }
@@ -34,28 +34,21 @@
   <header>
     <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
       <div class="brand">
-        <!-- Mini mascot -->
         <div class="pixel-border" style="background:#061423; padding:6px; border-radius:6px">
           <svg width="48" height="48" viewBox="0 0 120 120" aria-label="Professor Peter mini">
             <rect width="120" height="120" fill="#0b3b5a"/>
             <circle cx="60" cy="42" r="26" fill="#d7a671"/>
             <ellipse cx="60" cy="88" rx="30" ry="26" fill="#e6f0ff"/>
             <ellipse cx="60" cy="56" rx="24" ry="14" fill="#ffffff"/>
-            <!-- temples outside -->
             <rect x="28" y="38" width="8" height="2" fill="#5b6770"/>
             <rect x="84" y="38" width="8" height="2" fill="#5b6770"/>
-            <!-- lens frames -->
             <rect x="36" y="33" width="22" height="14" fill="#bfd7ff" stroke="#5b6770" stroke-width="3" rx="2"/>
             <rect x="62" y="33" width="22" height="14" fill="#bfd7ff" stroke="#5b6770" stroke-width="3" rx="2"/>
-            <!-- connecting bridge -->
             <rect x="56" y="39" width="14" height="3" fill="#5b6770"/>
-            <!-- eyes only black dots -->
             <circle cx="47" cy="40" r="3" fill="#000"/>
             <circle cx="73" cy="40" r="3" fill="#000"/>
-            <!-- nose + mouth -->
             <circle cx="60" cy="50" r="3" fill="#f7a1b3"/>
             <path d="M52,56 Q60,62 68,56" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <!-- buttons -->
             <circle cx="60" cy="78" r="2.5" fill="#5b6770"/>
             <circle cx="60" cy="90" r="2.5" fill="#5b6770"/>
           </svg>
@@ -74,7 +67,6 @@
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="section">
       <div class="wrap hero">
         <div>
@@ -88,7 +80,6 @@
           </div>
         </div>
         <div style="display:flex; justify-content:center">
-          <!-- Constrain mascot block so caption doesn't expand width -->
           <div class="pixel-border" style="background:#061423; padding:14px; border-radius:10px; max-width:360px">
             <svg width="340" height="260" viewBox="0 0 340 260" aria-label="Professor Peter mascot">
               <rect width="340" height="260" fill="#0b3b5a"/>
@@ -99,21 +90,15 @@
               <ellipse cx="230" cy="170" rx="16" ry="14" fill="#d7a671"/>
               <ellipse cx="145" cy="228" rx="14" ry="10" fill="#d7a671"/>
               <ellipse cx="195" cy="228" rx="14" ry="10" fill="#d7a671"/>
-              <!-- temples first (behind), positioned outside lenses -->
               <rect x="100" y="84" width="18" height="6" fill="#5b6770"/>
               <rect x="222" y="84" width="18" height="6" fill="#5b6770"/>
-              <!-- lenses with frames on top -->
               <rect x="121" y="68" width="52" height="32" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="6"/>
               <rect x="197" y="68" width="52" height="32" fill="#bfd7ff" stroke="#5b6770" stroke-width="6" rx="6"/>
-              <!-- bridge overlapping both frames -->
               <rect x="168" y="82" width="36" height="6" fill="#5b6770"/>
-              <!-- eyes (black dots only) -->
               <circle cx="147" cy="84" r="6" fill="#000"/>
               <circle cx="225" cy="84" r="6" fill="#000"/>
-              <!-- nose + mouth -->
               <circle cx="170" cy="108" r="6" fill="#f7a1b3"/>
               <path d="M150,122 Q170,134 190,122" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/>
-              <!-- buttons -->
               <circle cx="170" cy="164" r="6" fill="#5b6770"/>
               <circle cx="170" cy="188" r="6" fill="#5b6770"/>
             </svg>
@@ -123,7 +108,7 @@
       </div>
     </section>
 
-    <!-- Games: Two featured spelling games -->
+    <!-- Games: Three featured spelling games -->
     <section id="games" class="wrap" style="padding:40px 0">
       <div style="display:flex; align-items:end; justify-content:space-between">
         <h2 class="title">FEATURED GAMES</h2>
@@ -141,6 +126,7 @@
             <span class="btn">PLAY ↗</span>
           </div>
         </a>
+
         <a class="card" href="https://dlb08d.github.io/Spellassic-Park/" target="_blank" rel="noopener" aria-label="Open Spellassic Park">
           <div class="u8" style="color:#7df9ff">SPELLING</div>
           <h3 style="margin:12px 0 6px 0">Spellassic Park</h3>
@@ -148,6 +134,19 @@
             <img class="thumb" src="img/spellassic.jpeg" alt="Spellassic Park screenshot"
                  onerror="this.onerror=function(){this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDcyMCc+CiAgICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nZycgeDE9JzAnIHkxPScwJyB4Mj0nMScgeTI9JzEnPgogICAgICAgICAgPHN0b3Agb2Zmc2V0PScwJScgc3RvcC1jb2xvcj0nIzBiM2I1YScvPgogICAgICAgICAgPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMDkyMTNhJy8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgICAgPC9kZWZzPgogICAgICA8cmVjdCB3aWR0aD0nMTI4MCcgaGVpZ2h0PSc3MjAnIGZpbGw9J3VybCgjZyknLz4KICAgICAgPGcgZm9udC1mYW1pbHk9J0FyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYnIGZpbGw9JyM3ZGY5ZmYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPgogICAgICAgIDx0ZXh0IHg9JzY0MCcgeT0nMzQwJyBmb250LXNpemU9JzU2Jz5TcGVsbGFzc2ljIFBhcms8L3RleHQ+CiAgICAgICAgPHRleHQgeD0nNjQwJyB5PSc0MTAnIGZvbnQtc2l6ZT0nMjgnIGZpbGw9JyNhN2Q5ZmYnPkFkZCBpbWcvc3BlbGxhc3NpYy5qcGVnIG9yIGltZy9zcGVsbGFzc2ljLmpwZyBpbiAvaW1nPC90ZXh0PgogICAgICA8L2c+CiAgICAgIDxyZWN0IHg9JzQwJyB5PSc0MCcgd2lkdGg9JzEyMDAnIGhlaWdodD0nNjQwJyByeD0nMTgnIHJ5PScxOCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjMTQzMjRhJyBzdHJva2Utd2lkdGg9JzgnLz4KICAgIDwvc3ZnPg==';}; this.src='img/spellassic.jpg';">
             <p class="subtitle" style="margin-top:10px">Dino-sized spelling challenges. Click to play.</p>
+          </div>
+          <div style="margin-top:12px">
+            <span class="btn">PLAY ↗</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://dlb08d.github.io/Spell-Dash/" target="_blank" rel="noopener" aria-label="Open Spell Dash">
+          <div class="u8" style="color:#7df9ff">SPELLING</div>
+          <h3 style="margin:12px 0 6px 0">Spell Dash</h3>
+          <div class="grow">
+            <img class="thumb" src="img/spell-dash.jpeg" alt="Spell Dash screenshot"
+                 onerror="this.onerror=function(){this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMjgwIDcyMCc+CiAgICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nZycgeDE9JzAnIHkxPScwJyB4Mj0nMScgeTI9JzEnPgogICAgICAgICAgPHN0b3Agb2Zmc2V0PScwJScgc3RvcC1jb2xvcj0nIzBiM2I1YScvPgogICAgICAgICAgPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMDkyMTNhJy8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgICAgPC9kZWZzPgogICAgICA8cmVjdCB3aWR0aD0nMTI4MCcgaGVpZ2h0PSc3MjAnIGZpbGw9J3VybCgjZyknLz4KICAgICAgPGcgZm9udC1mYW1pbHk9J0FyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYnIGZpbGw9JyM3ZGY5ZmYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPgogICAgICAgIDx0ZXh0IHg9JzY0MCcgeT0nMzQwJyBmb250LXNpemU9JzU2Jz5TcGVsbCBEYXNoPC90ZXh0PgogICAgICAgIDx0ZXh0IHg9JzY0MCcgeT0nNDEwJyBmb250LXNpemU9JzI4JyBmaWxsPScjYTdkOWZmJz5BZGQgaW1nL3NwZWxsLWRhc2guanBlZyBvciBpbWcvc3BlbGwtZGFzaC5qcGcgaW4gL2ltZzwvdGV4dD4KICAgICAgPC9nPgogICAgICA8cmVjdCB4PSc0MCcgeT0nNDAnIHdpZHRoPScxMjAwJyBoZWlnaHQ9JzY0MCcgcng9JzE4JyByeT0nMTgnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzE0MzI0YScgc3Ryb2tlLXdpZHRoPSc4Jy8+CiAgICA8L3N2Zz4=';}; this.src='img/spell-dash.jpg';">
+            <p class="subtitle" style="margin-top:10px">Fast-paced spelling action. Click to play.</p>
           </div>
           <div style="margin-top:12px">
             <span class="btn">PLAY ↗</span>
@@ -193,7 +192,6 @@
   </footer>
 
   <script>
-    // Replace year
     document.body.innerHTML = document.body.innerHTML.replace("{year}", new Date().getFullYear());
   </script>
 </body>
